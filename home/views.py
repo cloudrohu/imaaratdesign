@@ -81,7 +81,7 @@ def BLOG(request):
     context={
         'setting':setting,
     }
-    return render(request,'main/BLOG.html',context)
+    return render(request,'main/blog.html',context)
 
 def Gallery(request):    
     setting = Setting.objects.all().order_by('-id')[0:1]
