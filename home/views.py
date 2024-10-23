@@ -182,3 +182,12 @@ def project(request):
         'setting':setting,
     }
     return render(request,'main/project.html',context)
+
+def REALESTATE(request):    
+    setting = Setting.objects.all().order_by('-id')[0:1]
+
+    page="home"
+    context={
+        'setting':setting,
+    }
+    return render(request,'main/Real_Estate.html',context)
