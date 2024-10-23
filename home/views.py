@@ -63,7 +63,7 @@ def contactus(request):
     context={
         'setting':setting,
     }
-    return render(request,'main/contact.html',context)
+    return render(request,'main/contactus.html',context)
 
 def BRAND(request):    
     setting = Setting.objects.all().order_by('-id')[0:1]
@@ -82,3 +82,93 @@ def BLOG(request):
         'setting':setting,
     }
     return render(request,'main/BLOG.html',context)
+
+def Gallery(request):    
+    setting = Setting.objects.all().order_by('-id')[0:1]
+
+    page="home"
+    context={
+        'setting':setting,
+    }
+    return render(request,'main/Gallery.html',context)
+
+
+def Our_Team(request):    
+    setting = Setting.objects.all().order_by('-id')[0:1]
+
+    page="home"
+    context={
+        'setting':setting,
+    }
+    return render(request,'main/OurtTeam.html',context)
+
+
+def Vision_Mission(request):    
+    setting = Setting.objects.all().order_by('-id')[0:1]
+
+    page="home"
+    context={
+        'setting':setting,
+    }
+    return render(request,'main/Vision-Mission.html',context)
+
+def DirectorDesk(request):    
+    setting = Setting.objects.all().order_by('-id')[0:1]
+
+    page="home"
+    context={
+        'setting':setting,
+    }
+    return render(request,'main/director-desk.html',context)
+
+
+#=====================Service Area=================================
+def Architecture(request):    
+    setting = Setting.objects.all().order_by('-id')[0:1]
+
+    page="home"
+    context={
+        'setting':setting,
+    }
+    return render(request,'main/Architecture.html',context)
+
+
+def Construction(request):    
+    setting = Setting.objects.all().order_by('-id')[0:1]
+
+    page="home"
+    context={
+        'setting':setting,
+    }
+    return render(request,'main/Construction.html',context)
+
+
+def Interior(request):    
+    setting = Setting.objects.all().order_by('-id')[0:1]
+
+    page="home"
+    context={
+        'setting':setting,
+    }
+    return render(request,'main/Interior.html',context)
+
+
+
+def Landscape(request):    
+    setting = Setting.objects.all().order_by('-id')[0:1]
+
+    page="home"
+    context={
+        'setting':setting,
+    }
+    return render(request,'main/Landscape.html',context)
+
+
+def Turnkey(request):    
+    setting = Setting.objects.all().order_by('-id')[0:1]
+
+    page="home"
+    context={
+        'setting':setting,
+    }
+    return render(request,'main/Turnkey.html',context)

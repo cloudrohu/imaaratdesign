@@ -16,16 +16,25 @@ urlpatterns = [
 
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('admin/', admin.site.urls),
-    path(('about/'), views.aboutus, name='aboutus'),
     path(('contactus/'), views.contactus, name='contactus'),
     path(('faqs/'), views.faqs, name='faqs'),
     path(('product/'), views.product, name='product'),
     path(('brand/'), views.BRAND, name='brand'),
+    path(('gallery/'), views.Gallery, name='gallery'),
+
+    path(('about/'), views.aboutus, name='aboutus'),
+    path(('our-team/'), views.Our_Team, name='our-team'),
+    path(('vision-mission/'), views.Vision_Mission, name='vision-mission'),
+    path(('director-desk/'), views.DirectorDesk, name='director-desk'),
+
+
+    path(('architecture/'), views.Architecture, name='architecture'),
+    path(('construction/'), views.Construction, name='construction'),
+    path(('interior/'), views.Interior, name='interior'),
+    path(('landscape/'), views.Landscape, name='landscape'),
+    path(('turnkey/'), views.Turnkey, name='turnkey'),
+
 
     path(('blog/'), views.BLOG, name='blog'),
-
-
-
-
-    
+                                                                                                                                                                                                 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
