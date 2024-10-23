@@ -1,0 +1,234 @@
+  
+  {% load static %}
+  <!-- header-start -->
+  {% for i in setting %}
+  <div class="cursor"></div>
+  <div class="cursor2"></div>
+
+  <!--============================== Preloader ==============================-->
+  <div id="preloader" class="preloader ">
+      <div id="loader" class="th-preloader">
+          <div class="animation-preloader">
+              <div class="txt-loading">
+                  <span preloader-text="I" class="characters">I</span>
+                  <span preloader-text="M" class="characters">M</span>
+                  <span preloader-text="A" class="characters">A</span>
+                  <span preloader-text="A" class="characters">A</span>
+                  <span preloader-text="R" class="characters">R</span>
+                  <span preloader-text="A" class="characters">A</span>
+                  <span preloader-text="T" class="characters">T</span>
+              </div>
+          </div>
+      </div>
+  </div> 
+
+  <!--============================== Sidemenu ============================== -->
+  <div class="sidemenu-wrapper sidemenu-info ">
+      <div class="sidemenu-content">
+          <button class="closeButton sideMenuCls"><i class="far fa-times"></i></button>
+          <div class="widget  ">
+              <div class="th-widget-about">
+                  <div class="about-logo">
+                      <a href="index.html"><img src="{% static '' %}assets/img/logo.png" alt="Imaarat"></a>
+                  </div>
+                  <p class="about-text">Architect and Interior Designer in Lucknow</p>
+                  <div class="th-social style2">
+                      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                      <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                      <a href="https://in.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="https://www.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                  </div>
+              </div>
+          </div>
+          <div class="widget  ">
+              <h3 class="widget_title">Contact Us</h3>
+              <div class="th-widget-about">
+                  <h4 class="footer-info-title">Address Location</h4>
+                  <p class="footer-info"><i class="fas fa-map-marker-alt"></i>Gomti Nagar, Lucknow</p>
+                  <h4 class="footer-info-title">Phone Number</h4>
+                  <p class="footer-info"><i class="fa-sharp fa-solid fa-phone"></i><a class="text-inherit" href="tel:9911040485">9911040485</a></p>
+                  <h4 class="footer-info-title">Email Address</h4>
+                  <p class="footer-info"><i class="fas fa-envelope"></i><a class="text-inherit" href="info@imaaratdesign.com">info@imaaratdesign.com</a></p>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="popup-search-box">
+      <button class="searchClose"><i class="fal fa-times"></i></button>
+      <form action="#">
+          <input type="text" placeholder="What are you looking for?">
+          <button type="submit"><i class="fal fa-search"></i></button>
+      </form>
+  </div>
+
+  <!--============================== Mobile Menu ============================== -->
+  <div class="th-menu-wrapper">
+      <div class="th-menu-area text-center">
+          <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
+          <div class="mobile-logo">
+              <a href="index.html"><img src="{% static '' %}assets/img/logo.png" alt="Imaarat"></a>
+          </div>
+          <div class="th-mobile-menu">
+              <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li class="menu-item-has-children">
+                      <a>About</a>
+                      <ul class="sub-menu">
+                          <li><a href="about.html">About Company</a></li>
+                          <li><a href="vm.html">Vision Mission</a></li>
+                          <li><a href="dd.html">Director Desk</a></li>
+                          <li><a href="team.html">Team</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="project.html">Project</a></li>
+                  <li class="menu-item-has-children">
+                      <a>Service</a>
+                      <ul class="sub-menu">
+                          <li><a href="architecture.html">Architecture</a></li>
+                          <li><a href="construction.html">Construction</a></li>
+                          <li><a href="interior.html">Interior Design</a></li>
+                          <li><a href="landscape.html">Landscape</a></li>
+                          <li><a href="turnkey.html">Turnkey Project</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="Real_Estate.html">Real Estate</a></li>
+                  <li><a href="Gallery.html">Gallery</a></li>
+                  <li>
+                      <a href="contact.html">Contact us</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+
+  <!--============================== Header Area ==============================-->
+  <header class="th-header bg-white header-layout3">
+  
+  <!--============================== Main Menu ==============================-->
+      <div class="sticky-wrapper">
+          <div class="menu-area">
+              <div class="container th-container">
+                  <div class="row justify-content-between align-items-center">
+                      <div class="col-auto">
+                          <div class="header-logo">
+                              <a href="index.html"><img src="{% static '' %}assets/img/logo-white.png" alt="Imaarat"></a>
+                          </div>
+                      </div>
+                      <div class="col-auto d-none d-lg-block sticky-d-none">
+                          <div class="info-card-wrap">
+                              <div class="info-card">
+                                  <div class="info-card_icon">
+                                      <img src="{% static '' %}assets/img/icon/call2.svg" alt="">
+                                  </div>
+                                  <div class="info-card_content">
+                                      <p class="info-card_text">Call Us Any Time:</p>
+                                      <a href="tel:9911040485" class="info-card_link">9911040485</a>
+                                  </div>
+                              </div>
+                              <div class="info-card">
+                                  <div class="info-card_icon">
+                                      <img src="{% static '' %}assets/img/icon/mail.svg" alt="">
+                                  </div>
+                                  <div class="info-card_content">
+                                      <p class="info-card_text">Email Us:</p>
+                                      <a href="mailto:info@imaaratdesign.com" class="info-card_link">info@imaaratdesign.com</a>
+                                  </div>
+                              </div>
+                              <div class="info-card">
+                                  <div class="info-card_icon">
+                                      <img src="{% static '' %}assets/img/icon/location.svg" alt="">
+                                  </div>
+                                  <div class="info-card_content">
+                                      <span class="info-card_label">Location Address:</span>
+                                      <p class="info-card_link">Gomti Nagar, Lucknow</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-auto sticky-d-block">
+                          <nav class="main-menu d-none d-lg-inline-block">
+                              <ul>
+                                  <li><a href="index.html">Home</a></li>
+                                  <li class="menu-item-has-children">
+                                          <a>About</a>
+                                          <ul class="sub-menu">
+                                              <li><a href="about.html">About Company</a></li>
+                                              <li><a href="vm.html">Vision Mission</a></li>
+                                              <li><a href="dd.html">Director Desk</a></li>
+                                              <li><a href="team.html">Team</a></li>
+                                          </ul>
+                                      </li>
+                                  <li><a href="project.html">Project</a></li>
+                                  <li class="menu-item-has-children">
+                                          <a>Service</a>
+                                          <ul class="sub-menu">
+                                              <li><a href="architecture.html">Architecture</a></li>
+                                              <li><a href="construction.html">Construction</a></li>
+                                              <li><a href="interior.html">Interior Design</a></li>
+                                              <li><a href="landscape.html">Landscape</a></li>
+                                              <li><a href="turnkey.html">Turnkey Project</a></li>
+                                          </ul>
+                                      </li>
+                                  <li><a href="Real_Estate.html">Real Estate</a></li>
+                                  <li><a href="Gallery.html">Gallery</a></li>
+                                  <li>
+                                      <a href="contact.html">Contact us</a>
+                                  </li>
+                              </ul>
+                          </nav>
+                      </div>
+                      <div class="col-auto d-lg-none">
+                          <button class="th-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i></button>
+                      </div>
+                  </div>
+                  <div class="main-menu-area">
+                      <div class="row justify-content-between align-items-center">
+                          <div class="col-auto">
+                              <nav class="main-menu d-none d-lg-inline-block">
+                                  <ul>
+                                      <li><a href="index.html">Home</a></li>
+                                      <li class="menu-item-has-children">
+                                          <a>About</a>
+                                          <ul class="sub-menu">
+                                              <li><a href="about.html">About Company</a></li>
+                                              <li><a href="vm.html">Vision Mission</a></li>
+                                              <li><a href="dd.html">Director Desk</a></li>
+                                              <li><a href="team.html">Team</a></li>
+                                          </ul>
+                                      </li>
+                                      <li><a href="project.html">Project</a></li>
+                                      <li class="menu-item-has-children">
+                                          <a>Service</a>
+                                          <ul class="sub-menu">
+                                              <li><a href="architecture.html">Architecture</a></li>
+                                              <li><a href="construction.html">Construction</a></li>
+                                              <li><a href="interior.html">Interior Design</a></li>
+                                              <li><a href="landscape.html">Landscape</a></li>
+                                              <li><a href="turnkey.html">Turnkey Project</a></li>
+                                          </ul>
+                                      </li>
+                                      <li><a href="Real_Estate.html">Real Estate</a></li>
+                                      <li><a href="Gallery.html">Gallery</a></li>
+                                      <li>
+                                          <a href="contact.html">Contact us</a>
+                                      </li>
+                                  </ul>
+                              </nav>
+                          </div>
+                          <div class="col-auto d-none d-lg-block">
+                              <div class="header-button">
+                                  <button type="button" class="simple-btn searchBoxToggler"><i class="far fa-search"></i></button>
+                                  <a href="#" class="simple-btn sideMenuToggler"><i class="fa-solid fa-grid"></i></a>
+                                  <a href="contact.html" class="th-btn style6 th-style th-icon">GET A QUOTE<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </header>
+
+
+  {% endfor %}
+  <!-- header-end -->
