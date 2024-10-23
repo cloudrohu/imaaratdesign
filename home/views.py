@@ -172,3 +172,13 @@ def Turnkey(request):
         'setting':setting,
     }
     return render(request,'main/Turnkey.html',context)
+
+
+def project(request):    
+    setting = Setting.objects.all().order_by('-id')[0:1]
+
+    page="home"
+    context={
+        'setting':setting,
+    }
+    return render(request,'main/project.html',context)

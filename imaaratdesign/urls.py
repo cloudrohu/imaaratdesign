@@ -36,5 +36,6 @@ urlpatterns = [
 
 
     path(('blog/'), views.BLOG, name='blog'),
+    path(('project/'), views.project, name='project'),
                                                                                                                                                                                                  
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
