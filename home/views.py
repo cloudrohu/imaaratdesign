@@ -9,6 +9,11 @@ def index(request):
     slider = Slider.objects.all().order_by('-id')[0:6]
     category = Category.objects.all().order_by('-id')
     sub_category = Sub_Category.objects.all().order_by('-id')
+    about = About_Page.objects.all().order_by('-id')[0:1]
+    contentclider = Content_Slider.objects.all().order_by('-id')
+    faq = FAQ.objects.all().order_by('-id')[0:6]
+
+
     
     
 
@@ -18,12 +23,16 @@ def index(request):
         'slider':slider,
         'category':category,
         'sub_category':sub_category,
+        'about':about,
+        'contentclider':contentclider,
+        'faq':faq,
     }
 
     return render(request,'main/index.html',context)
 
 def aboutus(request):    
     setting = Setting.objects.all().order_by('-id')[0:1]
+    about = About_Page.objects.all().order_by('-id')[0:1]
     slider = Slider.objects.all().order_by('-id')[0:6]
     
     
@@ -32,6 +41,7 @@ def aboutus(request):
     context={
         'setting':setting,
         'slider':slider,
+        'about':about,
     }
 
     return render(request,'main/about.html',context)

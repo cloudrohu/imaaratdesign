@@ -19,6 +19,9 @@ class About_Page(models.Model):
     vision = models.CharField(blank=True,max_length=2000)
     values = models.CharField(blank=True,max_length=2055)
     aboutus = RichTextUploadingField(blank=True)
+    experience = models.CharField(max_length=150,blank=True,)
+    technician = models.CharField(max_length=150,blank=True,)
+
     def __str__(self):
         return self.title
     
@@ -60,6 +63,7 @@ class Setting(models.Model):
     description = models.CharField(max_length=255)
     company = models.CharField(max_length=50)
     address = models.CharField(blank=True,max_length=100)
+    location = models.CharField(blank=True,max_length=30)
     phone = models.CharField(blank=True,max_length=15)
     whatsapp = models.CharField(blank=True,max_length=15)
     email = models.CharField(blank=True,max_length=50)
@@ -74,6 +78,7 @@ class Setting(models.Model):
     instagram = models.CharField(blank=True,max_length=50)
     twitter = models.CharField(blank=True,max_length=50)
     youtube = models.CharField(blank=True, max_length=50)
+    some_faq_title = models.CharField(blank=True, max_length=50)
     aboutus = RichTextUploadingField(blank=True)
     contact = RichTextUploadingField(blank=True)
     references = RichTextUploadingField(blank=True)
@@ -129,9 +134,8 @@ class FAQ(models.Model):
         ('False', 'False'),
     )
 
-    ordernumber = models.IntegerField()
     question = models.CharField(max_length=200)
-    answer = RichTextUploadingField()
+    answer = models.CharField(max_length=1000)
     status=models.CharField(max_length=10, choices=STATUS)
     create_at=models.DateTimeField(auto_now_add=True)
     update_at=models.DateTimeField(auto_now=True)
@@ -219,7 +223,9 @@ class Offer(models.Model):
 
 class Slider(models.Model):
     title = models.CharField(max_length=50)
-    image=models.ImageField(blank=True,upload_to='images/')
+    sub_title = models.CharField(max_length=50,blank=True,)
+
+    image=models.ImageField(upload_to='images/')
     featured_project = models.BooleanField(default=False)
     create_at=models.DateTimeField(auto_now_add=True)
     update_at=models.DateTimeField(auto_now=True)
@@ -234,6 +240,18 @@ class Slider(models.Model):
         return self.title
     class Meta:
         verbose_name_plural='8. Slider'
+
+class Content_Slider(models.Model):
+    title = models.CharField(max_length=50)
+    create_at=models.DateTimeField(auto_now_add=True)
+    update_at=models.DateTimeField(auto_now=True)
+
+    
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name_plural='11. Content_Slider'
+
 
 
 class Banner(models.Model):

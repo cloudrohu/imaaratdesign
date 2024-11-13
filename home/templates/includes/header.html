@@ -4,7 +4,7 @@
   {% for i in setting %}
   <div class="cursor"></div>
   <div class="cursor2"></div>
-
+  {% for i in setting %}
   <!--============================== Preloader ==============================-->
   <div id="preloader" class="preloader ">
       <div id="loader" class="th-preloader">
@@ -29,7 +29,7 @@
           <div class="widget  ">
               <div class="th-widget-about">
                   <div class="about-logo">
-                      <a href="/"><img src="{% static '' %}assets/img/logo.png" alt="Imaarat"></a>
+                      <a href="/"><img src="{{i.logo.url}}" style="height: 80px;" alt="logo"></a>
                   </div>
                   <p class="about-text">Architect and Interior Designer in Lucknow</p>
                   <div class="th-social style2">
@@ -44,11 +44,11 @@
               <h3 class="widget_title">Contact Us</h3>
               <div class="th-widget-about">
                   <h4 class="footer-info-title">Address Location</h4>
-                  <p class="footer-info"><i class="fas fa-map-marker-alt"></i>Gomti Nagar, Lucknow</p>
+                  <p class="footer-info"><i class="fas fa-map-marker-alt"></i>{{i.location}}</p>
                   <h4 class="footer-info-title">Phone Number</h4>
-                  <p class="footer-info"><i class="fa-sharp fa-solid fa-phone"></i><a class="text-inherit" href="tel:9911040485">9911040485</a></p>
+                  <p class="footer-info"><i class="fa-sharp fa-solid fa-phone"></i><a class="text-inherit" href="tel:{{i.phone}}">{{i.phone}}</a></p>
                   <h4 class="footer-info-title">Email Address</h4>
-                  <p class="footer-info"><i class="fas fa-envelope"></i><a class="text-inherit" href="info@imaaratdesign.com">info@imaaratdesign.com</a></p>
+                  <p class="footer-info"><i class="fas fa-envelope"></i><a class="text-inherit" href="{{i.email}}">{{i.email}}</a></p>
               </div>
           </div>
       </div>
@@ -66,7 +66,7 @@
       <div class="th-menu-area text-center">
           <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
           <div class="mobile-logo">
-              <a href="/"><img src="{% static '' %}assets/img/logo.png" alt="Imaarat"></a>
+              <a href="/"><img src="{{i.logo.url}}" style="height: 80px;" alt="logo"></a>
           </div>
           <div class="th-mobile-menu">
               <ul>
@@ -112,7 +112,7 @@
                   <div class="row justify-content-between align-items-center">
                       <div class="col-auto">
                           <div class="header-logo">
-                              <a href="/"><img src="{% static '' %}assets/img/logo-white.png" alt="Imaarat"></a>
+                              <a href="/"><img src="{{i.logo.url}}" style="height: 80px;" alt="logo"></a>
                           </div>
                       </div>
                       <div class="col-auto d-none d-lg-block sticky-d-none">
@@ -123,7 +123,7 @@
                                   </div>
                                   <div class="info-card_content">
                                       <p class="info-card_text">Call Us Any Time:</p>
-                                      <a href="tel:9911040485" class="info-card_link">9911040485</a>
+                                      <a href="tel:{{i.phone}}" class="info-card_link">{{i.phone}}</a>
                                   </div>
                               </div>
                               <div class="info-card">
@@ -132,7 +132,7 @@
                                   </div>
                                   <div class="info-card_content">
                                       <p class="info-card_text">Email Us:</p>
-                                      <a href="mailto:info@imaaratdesign.com" class="info-card_link">info@imaaratdesign.com</a>
+                                      <a href="mailto:{{i.email}}" class="info-card_link">{{i.email}}</a>
                                   </div>
                               </div>
                               <div class="info-card">
@@ -141,7 +141,7 @@
                                   </div>
                                   <div class="info-card_content">
                                       <span class="info-card_label">Location Address:</span>
-                                      <p class="info-card_link">Gomti Nagar, Lucknow</p>
+                                      <p class="info-card_link">{{i.location}}</p>
                                   </div>
                               </div>
                           </div>
@@ -231,7 +231,7 @@
           </div>
       </div>
   </header>
-
+  {% endfor %}
 
   {% endfor %}
   <!-- header-end -->

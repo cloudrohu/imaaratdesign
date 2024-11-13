@@ -12,10 +12,11 @@
     <div class="overflow-hidden space-bottom" id="about-sec">
         <div class="container">
             <div class="row">
+                {% for i in about %}
                 <div class="col-xl-6">
                     <div class="img-box4 me-xl-5 pe-xl-2">
                         <div class="img1">
-                            <img src="{% static '' %}assets/img/about/about_4.jpg" alt="About">
+                            <img src="{{i.image.url}}"  style="height: 450px;" alt="About">
                             <span class="about-text">About</span>
                         </div>
                         <div class="th-experience">
@@ -28,7 +29,9 @@
                 <div class="col-xl-6">
                     <div class="title-area mb-25">
                         <span class="sub-title style2"><img src="{% static '' %}assets/img/theme-img/title_left.svg" alt="shape">About Company</span>
-                        <h2 class="sec-title mb-20">Our Dream Home Awaits Let's Build Today.</h2>
+                        <p> <h2 class="sec-title mb-20">{{i.title}}</h2></p>
+                        
+
                     </div>
                     
 
@@ -36,20 +39,21 @@
                         <div class="about-item style2">
                             <div class="about-item_centent">
                                 <h5 class="box-title"><span class="text-theme"></span> Years of Experience</h5>
-                                <p class="about-item_text">5+</p>
+                                <p class="about-item_text">{{i.experience}}+</p>
                             </div>
                         </div>
                         <div class="about-item style2">
                             <div class="about-item_centent">
                                 <h5 class="box-title"><span class="text-theme"></span> Expert Technician</h5>
-                                <p class="about-item_text">8+</p>
+                                <p class="about-item_text">{{i.technician}}+</p>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <a href="about.html" class="th-btn th-style th-icon">More About Us <i class="fa-regular fa-arrow-right ms-2"></i></a>
+                        <a href="{% url "aboutus" %}" class="th-btn th-style th-icon">More About Us <i class="fa-regular fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -59,20 +63,11 @@
         <div class="marquee-wrapper">
             <div class="marquee">
                 <div class="marquee-group">
-                    <div class="text"><img src="{% static '' %}assets/img/icon/marquee-icon.svg" alt="">Construction</div>
-                    <div class="text"><img src="{% static '' %}assets/img/icon/marquee-icon.svg" alt="">Architecture</div>
-                    <div class="text"><img src="{% static '' %}assets/img/icon/marquee-icon.svg" alt="">Turnkey Project</div>
-                    <div class="text"><img src="{% static '' %}assets/img/icon/marquee-icon.svg" alt="">Interior Design</div>
-                    <div class="text"><img src="{% static '' %}assets/img/icon/marquee-icon.svg" alt="">Home Renovation</div>
-                    <div class="text"><img src="{% static '' %}assets/img/icon/marquee-icon.svg" alt="">Landscape</div>
-                </div>
-                <div aria-hidden="true" class="marquee-group">
-                    <div class="text"><img src="{% static '' %}assets/img/icon/marquee-icon.svg" alt="">Construction</div>
-                    <div class="text"><img src="{% static '' %}assets/img/icon/marquee-icon.svg" alt="">Architecture</div>
-                    <div class="text"><img src="{% static '' %}assets/img/icon/marquee-icon.svg" alt="">Turnkey Project</div>
-                    <div class="text"><img src="{% static '' %}assets/img/icon/marquee-icon.svg" alt="">Interior Design</div>
-                    <div class="text"><img src="{% static '' %}assets/img/icon/marquee-icon.svg" alt="">Home Renovation</div>
-                    <div class="text"><img src="{% static '' %}assets/img/icon/marquee-icon.svg" alt="">Landscape</div>
+
+                    {% for i in contentclider %}
+                    <div class="text"><img src="{% static '' %}assets/img/icon/marquee-icon.svg" alt="">{{i.title}}</div>
+                    {% endfor %}
+                    
                 </div>
             </div>
         </div>
@@ -184,39 +179,19 @@
                         <span class="sub-title style2"><img src="{% static '' %}assets/img/theme-img/title_left.svg" alt="shape">Some Faq</span>
                         <h2 class="sec-title">Final Inspections, Occupancy Permits, And Project.</h2>
                     </div>
-                    <div class="accordion" id="faqAccordion">
-                        <div class="accordion-card style3">
-                            <div class="accordion-header" id="collapse-item-1">
-                                <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">How can I ensure safety on a construction site?</button>
-                            </div>
-                            <div id="collapse-1" class="accordion-collapse collapse show" aria-labelledby="collapse-item-1" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p class="faq-text">Ensuring safety on a construction site is crucial to protect workers, visitors, and the overall success of the project. Here are some key steps to enhance safety on a construction site</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="accordion" id="faqAccordion">                        
+                        {% for i in faq %}
                         <div class="accordion-card style3">
                             <div class="accordion-header" id="collapse-item-2">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">What is the typical timeline for a construction project?</button>
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">{{i.question}}</button>
                             </div>
                             <div id="collapse-2" class="accordion-collapse collapse " aria-labelledby="collapse-item-2" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    <p class="faq-text">Throughout these stages, contractors, engineers, and project managers collaborate to ensure successful project execution, adhering to timelines and budget constraints.</p>
+                                    <p class="faq-text">{{i.answer}}</p>
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="accordion-card style3">
-                            <div class="accordion-header" id="collapse-item-3">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">How we get our project planning?</button>
-                            </div>
-                            <div id="collapse-3" class="accordion-collapse collapse " aria-labelledby="collapse-item-3" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p class="faq-text">Project planning is a crucial step in ensuring the success of any construction project. Here are the key steps to develop an effective project plan</p>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
