@@ -12,7 +12,7 @@
                         <div class="widget footer-widget">
                             <div class="th-widget-about">
                                 <div class="about-logo">
-                                    <a href="index.html"><img src="{% static '' %}assets/img/logo-white.png" alt="Imaarat"></a>
+                                    <a href="/"><img src="{{i.logo.url}}" style="height: 80px;" alt="logo"></a>
                                 </div>
                                 <p class="about-text">Architecture & Construction services offer tailored solutions to meet the unique needs and specifications of each project.</p>
                                 <div class="th-social style2">
@@ -29,11 +29,11 @@
                             <h3 class="widget_title">Useful Links</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="Gallery.html">Our Gallery</a></li>
-                                    <li><a href="service.html">Our Services</a></li>
-                                    <li><a href="team.html"> Our Team</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="{% url "aboutus" %}">About Us</a></li>
+                                    <li><a href="{% url "gallery" %}">Our Gallery</a></li>
+                                    <li><a href="#">Our Services</a></li>
+                                    <li><a href="#"> Our Team</a></li>
+                                    <li><a href="#">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -43,11 +43,11 @@
                             <h3 class="widget_title">Our Services</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="service.html">Architectural</a></li>
-                                    <li><a href="service.html">Construction</a></li>
-                                    <li><a href="service.html">Development</a></li>
-                                    <li><a href="service.html">Building</a></li>
-                                    <li><a href="service.html">Renovation</a></li>
+                                    <li><a href="#">Architectural</a></li>
+                                    <li><a href="#">Construction</a></li>
+                                    <li><a href="#">Development</a></li>
+                                    <li><a href="#">Building</a></li>
+                                    <li><a href="#">Renovation</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -57,11 +57,11 @@
                             <h3 class="widget_title">Quick Info</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="about.html">Our Story</a></li>
-                                    <li><a href="contact.html">Appointment</a></li>
+                                    <li><a href="#">Our Story</a></li>
+                                    <li><a href="#">Appointment</a></li>
                                     <li><a href="#">Terms & Condition</a></li>
-                                    <li><a href="contact.html">Get In Touch</a></li>
-                                    <li><a href="contact.html">Project Showcase</a></li>
+                                    <li><a href="#">Get In Touch</a></li>
+                                    <li><a href="#">Project Showcase</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -71,12 +71,12 @@
                             <h3 class="widget_title">Contact Us</h3>
                             <div class="th-widget-about style2">
                                 <h4 class="footer-info-title">Address Location</h4>
-                                <p class="footer-info"><i class="fas fa-map-marker-alt"></i>Gomti Nagar, Lucknow.</p>
+                                <p class="footer-info"><i class="fas fa-map-marker-alt"></i>{{i.location}}</p>
                                 <h4 class="footer-info-title">Contact Number</h4>
                                 <p class="footer-info"><i class="fa-sharp fa-solid fa-phone"></i>
                                     <span>
-                                        <a class="text-inherit" href="tel:9911040485"> 9911040485 </a>
-                                        <a class="text-inherit" href="info@imaaratdesign.com">info@imaaratdesign.com</a>
+                                        <a class="text-inherit" href="tel:{{i.phone}}"> {{i.phone}} </a>
+                                        <a class="text-inherit" href="{{i.email}}">{{i.email}}</a>
                                     </span>
                                 </p>
                             </div>
@@ -95,7 +95,7 @@
         </div>
     </div>
     <div class="copyright-wrap text-center">
-        <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2024 <a href="index.html">Imaarat Design</a>. All Rights Reserved.</p>
+        <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2024 <a href="/">Imaarat Design</a>. All Rights Reserved.</p>
     </div>
 </footer>
 
