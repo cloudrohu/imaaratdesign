@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from home.models import *
 from product.models import *
 
@@ -7,8 +7,6 @@ from product.models import *
 def index(request):    
     setting = Setting.objects.all().order_by('-id')[0:1]
     slider = Slider.objects.all().order_by('-id')[0:6]
-    category = Category.objects.all().order_by('-id')
-    sub_category = Sub_Category.objects.all().order_by('-id')
     about = About_Page.objects.all().order_by('-id')[0:1]
     contentclider = Content_Slider.objects.all().order_by('-id')
     faq = FAQ.objects.all().order_by('-id')[0:6]
@@ -21,8 +19,6 @@ def index(request):
     context={
         'setting':setting,
         'slider':slider,
-        'category':category,
-        'sub_category':sub_category,
         'about':about,
         'contentclider':contentclider,
         'faq':faq,
@@ -55,7 +51,25 @@ def product(request):
         'setting':setting,
         'product':product,
     }
-    return render(request,'main/product.html',context)
+    return render(request,'main/product/product.html',context)
+
+def product_details(request,slug): 
+    setting = Setting.objects.all().order_by('-id')[0:1]
+
+    product = Product.objects.filter(slug = slug)
+    if product.exists():
+        product = Product.objects.get(slug = slug)
+    else :
+        return redirect('404')
+    context = {
+
+        'product': product,
+        'setting': setting,
+    }   
+     
+    return render(request, 'main/product/product-details.html',context)
+
+
 
 def faqs(request):    
     setting = Setting.objects.all().order_by('-id')[0:1]
