@@ -12,8 +12,6 @@ urlpatterns = [
     path('home/', include('home.urls')),
     path('logout/',RedirectView.as_view(url = '/admin/logout/')),
 
-
-
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('admin/', admin.site.urls),
     path(('contactus/'), views.contactus, name='contactus'),
@@ -38,10 +36,15 @@ urlpatterns = [
     path(('blog/'), views.BLOG, name='blog'),
     path(('real-estate/'), views.REALESTATE, name='real-estate'),
 
-
-    path(('project/'), views.project, name='project'),
     path(('product/'), views.product, name='product'),
     path('product_details/<slug:slug>', views.product_details, name='product_details'),
 
+    path(('complate_project/'), views.Complate_project, name='complate_project'),
+    path(('ongoing_project/'), views.Ongoing_project, name='ongoing_project'),
+    path(('upcoming_project/'), views.Upcoming_project, name='Upcoming_project'),
+    path('project_details/<slug:slug>', views.project_details, name='project_details'),
+
+    path(('service/'), views.service, name='service'),
+    path('service_details/<slug:slug>', views.service_details, name='service_details'),
                                                                                                                                                                                                  
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -84,66 +84,20 @@
             <div class="slider-area">
                 <div class="swiper th-slider has-shadow" id="serviceSlider4" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"4"}}}'>
                     <div class="swiper-wrapper">
+                        {% for i in service %}
                         <div class="swiper-slide">
                             <div class="service-item th-ani">
-                                <div class="service-item_img">
-                                    <img src="{% static '' %}assets/img/service/service_1_3.jpg" alt="Icon">
+                                <div class="{{i.get_absolute_url}}">
+                                    <img src="{{i.image.url}}" style="height: 250px;" alt="Icon">
                                 </div>
+                                <br>
                                 <div class="service-item_content">
-                                    <h3 class="box-title"><a href="service-details.html">Architecture</a></h3>
-                                    <p class="service-item_text">#</p>
-                                    <a href="service-details.html" class="icon-btn th-icon"><i class="fa-regular fa-arrow-right"></i></a>
+                                    <h3 class="box-title"><a href="{{i.get_absolute_url}}">{{i.title}}</a></h3>
+                                    <a href="{{i.get_absolute_url}}" class="icon-btn th-icon"><i class="fa-regular fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="service-item th-ani">
-                                <div class="service-item_img">
-                                    <img src="{% static '' %}assets/img/service/service_1_3.jpg" alt="Icon">
-                                </div>
-                                <div class="service-item_content">
-                                    <h3 class="box-title"><a href="service-details.html">Construction</a></h3>
-                                    <p class="service-item_text">#</p>
-                                    <a href="service-details.html" class="icon-btn th-icon"><i class="fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="service-item th-ani">
-                                <div class="service-item_img">
-                                    <img src="{% static '' %}assets/img/service/service_1_4.jpg" alt="Icon">
-                                </div>
-                                <div class="service-item_content">
-                                    <h3 class="box-title"><a href="service-details.html">Interior Design</a></h3>
-                                    <p class="service-item_text">#</p>
-                                    <a href="service-details.html" class="icon-btn th-icon"><i class="fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="service-item th-ani">
-                                <div class="service-item_img">
-                                    <img src="{% static '' %}assets/img/service/service_1_1.jpg" alt="Icon">
-                                </div>
-                                <div class="service-item_content">
-                                    <h3 class="box-title"><a href="service-details.html">Turnkey Project</a></h3>
-                                    <p class="service-item_text">#</p>
-                                    <a href="service-details.html" class="icon-btn th-icon"><i class="fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="service-item th-ani">
-                                <div class="service-item_img">
-                                    <img src="{% static '' %}assets/img/service/service_1_2.jpg" alt="Icon">
-                                </div>
-                                <div class="service-item_content">
-                                    <h3 class="box-title"><a href="service-details.html">LandScape</a></h3>
-                                    <p class="service-item_text">#</p>
-                                    <a href="service-details.html" class="icon-btn th-icon"><i class="fa-regular fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <button data-slider-prev="#serviceSlider4" class="slider-arrow slider-prev"><i class="far fa-arrow-left"></i></button>

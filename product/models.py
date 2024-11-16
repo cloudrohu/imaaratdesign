@@ -13,6 +13,129 @@ from django.utils.text import slugify
 # Create your models here.
 
 
+class Project(models.Model):    
+    Project_Type = (
+        ('COMPLATE', 'COMPLATE'),
+        ('ONGOING', 'ONGOING'),
+        ('UPCOMING', 'UPCOMING'),
+    )
+
+    title = models.CharField(max_length=150)
+    keywords = models.CharField(max_length=1255)
+    description = models.TextField(max_length=1255)
+    image=models.ImageField(upload_to='images/',null=False)
+    detail=RichTextUploadingField()
+    slug = models.SlugField(null=True,blank=True, unique=True,max_length=250)
+    Project_Type=models.CharField(max_length=10,choices=Project_Type)
+    featured_project = models.BooleanField(default=False)
+    create_at=models.DateTimeField(auto_now_add=True)
+    update_at=models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural='2. Project'
+
+
+    ## method to create a fake table field in read only mode
+    def image_tag(self):
+        if self.image.url is not None:
+            return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))
+        else:
+            return ""
+
+    def save(self , *args , **kwargs):
+        self.slug = slugify(self.title)
+        super(Project ,self).save(*args , **kwargs)
+
+
+    def get_absolute_url(self):
+        return reverse('project_details', kwargs={'slug': self.slug})
+
+    def avaregereview(self):
+        reviews = Comment.objects.filter(product=self, status='True').aggregate(avarage=Avg('rate'))
+        avg=0
+        if reviews["avarage"] is not None:
+            avg=float(reviews["avarage"])
+        return avg
+
+    def countreview(self):
+        reviews = Comment.objects.filter(product=self, status='True').aggregate(count=Count('id'))
+        cnt=0
+        if reviews["count"] is not None:
+            cnt = int(reviews["count"])
+        return cnt
+
+class Project_Images(models.Model):
+    product=models.ForeignKey(Project,on_delete=models.CASCADE)
+    title = models.CharField(max_length=50,blank=True)
+    image = models.ImageField(blank=True, upload_to='images/')
+
+    def __str__(self):
+        return self.title
+
+
+class Service(models.Model):    
+    STATUS = (
+        ('True', 'True'),
+        ('False', 'False'),
+    )
+
+    title = models.CharField(max_length=150)
+    keywords = models.CharField(max_length=1255)
+    description = models.TextField(max_length=1255)
+    image=models.ImageField(upload_to='images/',null=False)
+    detail=RichTextUploadingField()
+    slug = models.SlugField(null=True,blank=True, unique=True,max_length=250)
+    status=models.CharField(max_length=10,choices=STATUS)
+    featured_project = models.BooleanField(default=False)
+    create_at=models.DateTimeField(auto_now_add=True)
+    update_at=models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural='3. Service'
+
+
+    ## method to create a fake table field in read only mode
+    def image_tag(self):
+        if self.image.url is not None:
+            return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))
+        else:
+            return ""
+
+    def save(self , *args , **kwargs):
+        self.slug = slugify(self.title)
+        super(Service ,self).save(*args , **kwargs)
+
+
+    def get_absolute_url(self):
+        return reverse('service_details', kwargs={'slug': self.slug})
+
+    def avaregereview(self):
+        reviews = Comment.objects.filter(product=self, status='True').aggregate(avarage=Avg('rate'))
+        avg=0
+        if reviews["avarage"] is not None:
+            avg=float(reviews["avarage"])
+        return avg
+
+    def countreview(self):
+        reviews = Comment.objects.filter(product=self, status='True').aggregate(count=Count('id'))
+        cnt=0
+        if reviews["count"] is not None:
+            cnt = int(reviews["count"])
+        return cnt
+
+class Service_Images(models.Model):
+    product=models.ForeignKey(Service,on_delete=models.CASCADE)
+    title = models.CharField(max_length=50,blank=True)
+    image = models.ImageField(blank=True, upload_to='images/')
+
+    def __str__(self):
+        return self.title
+
+
 class Product(models.Model):    
     STATUS = (
         ('True', 'True'),
@@ -76,6 +199,7 @@ class Images(models.Model):
     def __str__(self):
         return self.title
 
+
 class Comment(models.Model):
     STATUS = (
         ('New', 'New'),
@@ -96,7 +220,7 @@ class Comment(models.Model):
         return self.subject
     
     class Meta:
-        verbose_name_plural='2. Comment'
+        verbose_name_plural='4. Comment'
 
 class CommentForm(ModelForm):
     class Meta:

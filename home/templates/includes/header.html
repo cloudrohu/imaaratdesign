@@ -46,7 +46,7 @@
                   <h4 class="footer-info-title">Address Location</h4>
                   <p class="footer-info"><i class="fas fa-map-marker-alt"></i>{{i.location}}</p>
                   <h4 class="footer-info-title">Phone Number</h4>
-                  <p class="footer-info"><i class="fa-sharp fa-solid fa-phone"></i><a class="text-inherit" href="tel:{{i.phone}}">{{i.phone}}</a></p>
+                  <p class="footer-info"><i class="fa-sharp fa-solid fa-phone"></i><a class="text-inherit" href="tel:+91{{i.phone}}">{{i.phone}}</a></p>
                   <h4 class="footer-info-title">Email Address</h4>
                   <p class="footer-info"><i class="fas fa-envelope"></i><a class="text-inherit" href="{{i.email}}">{{i.email}}</a></p>
               </div>
@@ -81,14 +81,13 @@
                       </ul>
                   </li>
                   <li><a href="{% url "product" %}">Product</a></li>
+                  <li><a href="{% url "service" %}">Services</a></li>
                   <li class="menu-item-has-children">
-                      <a>Service</a>
+                      <a>Projects</a>
                       <ul class="sub-menu">
-                        <li><a href="{% url "architecture" %}">Architecture</a></li>
-                        <li><a href="{% url "construction" %}">Construction</a></li>
-                        <li><a href="{% url "interior" %}">Interior Design</a></li>
-                        <li><a href="{% url "landscape" %}">Landscape</a></li>
-                        <li><a href="{% url "turnkey" %}">Turnkey Project</a></li>
+                        <li><a href="{% url "architecture" %}">Complate Projects</a></li>
+                        <li><a href="{% url "construction" %}">Ongoing Projects</a></li>
+                        <li><a href="{% url "interior" %}">Upcoming Projects</a></li>
                     </ul>
                   </li>
                   <li><a href="{% url "real-estate" %}">Real Estate</a></li>
@@ -160,14 +159,14 @@
                                         </ul>
                                       </li>
                                   <li><a href="{% url "product" %}">product</a></li>
+                                  <li><a href="{% url "service" %}">Services</a></li>
                                   <li class="menu-item-has-children">
-                                          <a>Service</a>
+                                          <a>Projects</a>
                                           <ul class="sub-menu">
-                                              <li><a href="{% url "architecture" %}">Architecture</a></li>
-                                              <li><a href="{% url "construction" %}">Construction</a></li>
-                                              <li><a href="{% url "interior" %}">Interior Design</a></li>
-                                              <li><a href="{% url "landscape" %}">Landscape</a></li>
-                                              <li><a href="{% url "turnkey" %}">Turnkey Project</a></li>
+                                              <li><a href="{% url "architecture" %}">Complate Projects</a></li>
+                                              <li><a href="{% url "construction" %}">Ongoing Projects</a></li>
+                                              <li><a href="{% url "interior" %}">Upcoming Projects</a></li>
+                                              
                                           </ul>
                                       </li>
                                   <li><a href="{% url "real-estate" %}">Real Estate</a></li>
@@ -199,14 +198,13 @@
                                         </ul>
                                       </li>
                                       <li><a href="{% url "product" %}">product</a></li>
+                                      <li><a href="{% url "service" %}">Services</a></li>
                                       <li class="menu-item-has-children">
-                                          <a>Service</a>
+                                          <a>Projects</a>
                                           <ul class="sub-menu">
-                                              <li><a href="{% url "architecture" %}">Architecture</a></li>
-                                              <li><a href="{% url "construction" %}">Construction</a></li>
-                                              <li><a href="{% url "interior" %}">Interior Design</a></li>
-                                              <li><a href="{% url "landscape" %}">Landscape</a></li>
-                                              <li><a href="{% url "turnkey" %}">Turnkey Project</a></li>
+                                            <li><a href="{% url "complate_project" %}">Complate Projects</a></li>
+                                            <li><a href="{% url "ongoing_project" %}">Ongoing Projects</a></li>
+                                            <li><a href="{% url "Upcoming_project" %}">Upcoming Projects</a></li>
                                           </ul>
                                       </li>
                                       <li><a href="{% url "real-estate" %}">Real Estate</a></li>

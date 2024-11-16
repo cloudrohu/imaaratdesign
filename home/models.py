@@ -59,6 +59,8 @@ class Setting(models.Model):
     footer_color_2 = models.CharField(max_length=150,blank=True,)
     text_color = models.CharField(max_length=150,blank=True,)
     title = models.CharField(max_length=150)
+    OurServices_title = models.CharField(blank=True,max_length=150)
+    product_title = models.CharField(blank=True,max_length=150)
     keywords = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
     company = models.CharField(max_length=50)
