@@ -1,14 +1,14 @@
 <!doctype html>
 {% load static %}
-
+{% for rs in setting %}
 <html class="no-js" lang="zxx">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Architect and Interior Designer in Lucknow | Best Architect in Lucknow | Imaarat Design | Home Page</title>
+    <title>{{rs.title}}</title>
     <meta name="author" content="Imaarat Design">
-    <meta name="description" content="Imaarat Design, Best architects in Lucknow, Interior Designer in Lucknow">
-    <meta name="keywords" content="Imaarat Design, Best architects in Lucknow, Interior Designer in Lucknow">
+    <meta name="description" content="{{rs.description}}">
+    <meta name="keywords" content="{{rs.keywords}}">
     <meta name="robots" content="INDEX,FOLLOW">
 
     <!-- Mobile Specific Metas -->
@@ -50,7 +50,6 @@
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="{% static '' %}assets/css/style.css">
 </head>
-
 <body>
     {% include "includes/header.html" %}
     <!-- offcanvas area start -->
@@ -99,4 +98,8 @@
     <script src="{% static '' %}assets/js/main.js"></script>
 
 </body>
+
+
 </html>
+
+{% endfor %}

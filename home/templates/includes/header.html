@@ -10,13 +10,9 @@
       <div id="loader" class="th-preloader">
           <div class="animation-preloader">
               <div class="txt-loading">
-                  <span preloader-text="I" class="characters">I</span>
-                  <span preloader-text="M" class="characters">M</span>
-                  <span preloader-text="A" class="characters">A</span>
-                  <span preloader-text="A" class="characters">A</span>
-                  <span preloader-text="R" class="characters">R</span>
-                  <span preloader-text="A" class="characters">A</span>
-                  <span preloader-text="T" class="characters">T</span>
+                {% for rs in setting %}
+                  <span preloader-text="{{title}}" class="characters">{{rs.company}}</span>
+                  {% endfor %}
               </div>
           </div>
       </div>
@@ -90,7 +86,6 @@
                         <li><a href="{% url "Upcoming_project" %}">Upcoming Projects</a></li>
                     </ul>
                   </li>
-                  <li><a href="{% url "real-estate" %}">Real Estate</a></li>
                   <li><a href="{% url "gallery" %}">Gallery</a></li>
                   <li><a href="{% url "blog" %}">Blogs</a></li>
                   <li>
@@ -169,7 +164,6 @@
                                               
                                           </ul>
                                       </li>
-                                  <li><a href="{% url "real-estate" %}">Real Estate</a></li>
                                   <li><a href="{% url "gallery" %}">Gallery</a></li>
                                   <li><a href="{% url "blog" %}">Blog</a></li>
                                   <li>
@@ -207,7 +201,6 @@
                                             <li><a href="{% url "Upcoming_project" %}">Upcoming Projects</a></li>
                                           </ul>
                                       </li>
-                                      <li><a href="{% url "real-estate" %}">Real Estate</a></li>
                                       <li><a href="{% url "gallery" %}">Gallery</a></li>
                                       <li><a href="{% url "blog" %}">Blog</a></li>
                                       <li>
